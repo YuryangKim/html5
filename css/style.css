@@ -1,12 +1,12 @@
 body{
     margin: 0;
 }
+body *, body *::before, body *::after{
+    box-sizing: border-box;
+}
 .header, .visual, .main, .slogan, .footer-content{
     width: 940px;
     margin: 0 auto;
-}
-body *, body *::before, body *::after{
-    box-sizing: border-box;
 }
 .header{
     background-color: yellow;
@@ -18,26 +18,26 @@ body *, body *::before, body *::after{
 }
 .main{
     background-color: blue;
-    padding: 30px 15px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 30px;
 }
 .group{
     height: 60vh;
-    margin: 15px;
 }
 .group1{
     background-color: violet;
-    float: left;
     width: 250px;
 }
 .group2{
     background-color: aqua;
     width: 380px;
-    float: left;
+    order: -1;
 }
 .group3{
     background-color: sandybrown;
     width: 190px;
-    float: left;
 }
 .slogan{
     background-color: lightgreen;                                                               
