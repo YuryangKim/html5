@@ -19,12 +19,13 @@
                 <!--div 사용할 수 없음 contents라서 ul의 childe 요소로 올 수 없음-->>
                 <!-- <div>
                     <li><a href="#">홈</a></li>
-                    <li><a href="#">로그인</a></li>
+                    <li><a href="#">로그인</a></li>리
                 </div> -->
-                <li><a href="#">홈</a></li>
-                <li><a href="#">로그인</a></li>
-                <li><a href="#">회원가입</a></li>
-                <li><a href="#">사이트맵</a></li>
+                <!--aria hidden true : 읽지 않게 / false는 읽는 것 / 접근성 때문에 mark up처리 나중에 지저분한 것은 스크립트처-->>
+                <li><a href="#">홈</a><span class="divider" aria-hidden="true">:</span></li>
+                <li><a href="#">로그인</a><span class="divider" aria-hidden="true">:</span></li>
+                <li><a href="#">회원가입</a><span class="divider" aria-hidden="true">:</span></li>
+                <li><a href="#">사이트맵</a><span class="divider" aria-hidden="true">:</span></li>
                 <li><a href="#">english</a></li>
             </ul>
             <nav class="navigation">
