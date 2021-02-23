@@ -5,6 +5,9 @@ body{
     width: 940px;
     margin: 0 auto;
 }
+body *, body *::before, body *::after{
+    box-sizing: border-box;
+}
 .header{
     background-color: yellow;
     height: 10vh;
@@ -15,12 +18,11 @@ body{
 }
 .main{
     background-color: blue;
-    border: 10px solid green;
-    /* hegight: 60vh; */
-    overflow: hidden;
+    padding: 30px 15px;
 }
 .group{
     height: 60vh;
+    margin: 15px;
 }
 .group1{
     background-color: violet;
@@ -38,7 +40,7 @@ body{
     float: left;
 }
 .slogan{
-    background-color: lightgreen;
+    background-color: lightgreen;                                                               
     height: 10vh;
 }
 .footer{
