@@ -1,10 +1,31 @@
+@import url(//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css);
+@import url(./normalize.css);
+/* 숨김 콘텐츠 */
+.a11y-hidden{
+    background-color: yellow;
+    position: absolute;
+    /* top: -9999px top좌표를 쓰면 저시력 사용자에게 혼란을 유발 할 수 있다 스크린 튐 현상 발생 */
+     /* 화면에 영역이 있어야 읽어줌 포커스를 받으려면 기본적인 크기가 있어야 함  */
+    width: 1px;
+    height: 1px;
+    /* padding과 다르게 nagative값 사용 가능  */
+    margin: -1px;
+    overflow: hidden;
+    /* 그렇게 해도 빨간 점이 작게 찍힌 것처럼 보이기 때문에 이걸 숨기기 위해 사용 polygon 함수 사용*/
+    /* crip rect는 하위버전을 위해서 같이 사 */
+    clip: rect(0 0 0 0);용
+    clip-path: polygon(0 0, 0 0, 0 0);
+}
+
 html{
     font-size: 10px;
 }
 body{
-    margin: 0;
     background-color: #ccc;
     font-size: 1.2rem;
+    /* body에만 넣어주면 상속 */
+    font-weight: 300;
+    font-family: 'Spoqa Han Sans Neo', 'sans-serif';
 }
 body *, body *::before, body *::after{
     box-sizing: border-box;
