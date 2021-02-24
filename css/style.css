@@ -1,8 +1,9 @@
 @import url(//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css);
+@import url(./fontello.css);
 @import url(./normalize.css);
 /* 숨김 콘텐츠 */
 .a11y-hidden{
-    background-color: yellow;
+    background-color: red;
     position: absolute;
     /* top: -9999px top좌표를 쓰면 저시력 사용자에게 혼란을 유발 할 수 있다 스크린 튐 현상 발생 */
      /* 화면에 영역이 있어야 읽어줌 포커스를 받으려면 기본적인 크기가 있어야 함  */
@@ -12,11 +13,11 @@
     margin: -1px;
     overflow: hidden;
     /* 그렇게 해도 빨간 점이 작게 찍힌 것처럼 보이기 때문에 이걸 숨기기 위해 사용 polygon 함수 사용*/
-    /* crip rect는 하위버전을 위해서 같이 사 */
-    clip: rect(0 0 0 0);용
+    /* crip rect는 하위버전을 위해서 같이 사용*/
+    clip: rect(0 0 0 0);
     clip-path: polygon(0 0, 0 0, 0 0);
 }
- 
+
 /*스타일 초기화 리셋을 하고 시작*/
 .reset-list{
     list-style: none;
@@ -37,7 +38,6 @@ body{
 body *, body *::before, body *::after{
     box-sizing: border-box;
 }
-
 /* 링크 스타일 */
 a{
     text-decoration: none;
@@ -51,7 +51,8 @@ a{
 .header{
     background-color: #fff;
     position: relative
-    padding: 0 30px 30px;
+    padding: 0 30px 35px;
+    border-radius: 0 0 15px 15px;
 } 
 /* 로고 */
 .logo{
@@ -101,21 +102,24 @@ a{
     height: 47px;
     padding-left: 225px;                                           
 }
-
+.menu a{
+    outline: 0;
+}
 .menu-item{
+    /* 자식의 기준으로만 삼을 거기 때문에 realative */
+    position: relative;
     float: left;
-    padding: 0 20px;
-    border-left: 1px #fff;
-    line-height: 45px;
+    border-left: 1px solid  #fff;
 }
 .menu-item-button{
+    padding: 2px 20px 0;
+    line-height: 45px;
     display: block;
     color: #fff;
-    padding: 2px 20px 0;
     font-size: 1.6rem;
     font-weight: 700;
     /* 글자 테두리 만드는 법 왼쪽하단 오른쪽 상단 2개 만듦 */
-    text-shadow: 1px 1px 0 #000, -1px -1px 0 #000
+    text-shadow: 1px 1px 0 #000, -1px -1px 0 #000;
 }
 .menu-act .menu-item-button{
     color: yellow;
@@ -129,21 +133,50 @@ a{
     margin-top: -2px;
 }
 .sub-menu{                                                                                                 
-    background-color: pink;
     position: absolute;
     display: none;
+    top: 47px;
+    /* white-space 공백 처리 nowrap 줄바꿈 허용 금지*/
+    white-space: nowrap;
 }
-.sub-menu1{
+.menu-act .sub-menu{
     display: block;
-    top: 0;
+}
+.sub-menu1 .sub-menu2 .sub-menu3{
+    /* display: block; */
     left: 0;
 }
-
+/* 1,2,3은 left로 처리 4,5,6은 right로 처리 */
+.sub-menu4 .sub-menu5 .sub-menu6{
+    right: 0;
+}
+.sub-menu li{
+    display: inline-block;
+}
+.sub-menu a{
+    display: inline-block;
+    padding: 10px 0 8px;
+    margin-right: 5px;
+}
+/* .sub.menu a{
+    content: '\f192';
+    font-family: 'fontello';
+    display: inline-block;
+    text-decoration: inherit;
+    width: 1em;
+    margin-right: .2em;
+    text-align: center;
+}
+.sub.menu a::hover::before .sub.menu a::focus::before{
+    content: '\e800';
+} */
+.sub-menu a:hover, .sub-menu a:focus{
+    color: #f00;
+}
 .visual{
     background-color: salmon;
     height: 10vh;
 }
-
 .main{
     background-color: blue;
     display: flex;
