@@ -198,7 +198,7 @@ a{
     }
 }
 .visual{
-    height: 120px;문
+    height: 120px;
     position: relative;
 }
 /* 실무 마크업 요소에 담는 것이 나음 2번씩 밖에 못 쓰기 때 */
@@ -276,6 +276,7 @@ a{
     background-color: #fff;
     border-radius: 5px 5px 0 0;
     padding: 10px 10px 0 10px;
+    margin-top: 10px;
 }
 .login-form fieldset{
     margin: 0;
@@ -283,7 +284,7 @@ a{
     border: 0;
     border-bottom: 1px solid #aaa;
     margin-top: 10px;
-    position: relative
+    position: relative;
 }
 /* 아이디 비밀번호 사이 띄우기 이 경우 비밀번호 위만 띄움 */
 .user-pw{
@@ -294,7 +295,6 @@ a{
     display: inline-block;
     width: 50px;
 }
-
 .login-form input{
     width: 90px;
     height: 22px;
@@ -303,7 +303,7 @@ a{
     border: 1px solid #aaa;
 }
 .btn-login{
-    position: 0;
+    position: absolute;
     top: 0;
     right: 0;
     background-color: #ce4827;
@@ -332,6 +332,89 @@ a{
 .member-service .icon-right-open{
     color: #ce4827;
 }
+/* 유효성 검사 배너 */
+.validation-list{
+    margin: 25px 0 0 0;
+    padding-left: 0;
+    list-style-type: none;
+}
+.validation-list a{
+    display: block;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    margin-top: 10px;
+    padding: 7px 5px 5px 40px;
+    background: url(./images/validation_icon.png) no-repeat 15px 50%, linear-gradient(180deg, #ccc, #eee);
+    background-color: #ccc;
+}
+.term{
+    display: inline-block;
+    width: 250px;
+    background: linear-gradient(180deg, #ccc, #eee);
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px 15px;
+    margin-top: 20px;
+}
+/* 웹 관련 용어 */
+.term-heading{
+    margin-top: 10px;
+    font-weight: 700;
+    font-size: 1.5rem;
+}
+/* 웹 표준이란? */
+.term-list-subject{
+    float: right;
+    width: 145px;
+    color: #296897;
+    font-size: 100%;
+    font-weight: 500;
+}
+/* 로고 */
+.term-list-thumbnail{
+    display: inline;
+    position: relative;
+    margin: auto;
+    float: left;
+    background: url(./images/common/web_standards.gif) no-repeat 15px 50%;
+}
+/* text */
+.term-list-brief{
+    margin: auto;
+    float: right;
+    width: 145px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-weight: 500;
+}
+
+/* 2번째 웹 표준이란? */
+.term-list-subject-2{
+    float: left;
+    width: 145px;
+    color: #296897;
+    font-size: 100%;
+    font-weight: 500;
+    margin-top: 10px;
+}
+/* 2번째 로고 */
+.term-list-thumbnail-2{
+    display: inline;
+    position: relative;
+    margin: auto;
+    float: right;
+    background: url(./images/common/web_standards.gif) no-repeat 15px 50%;
+}
+/* 2번째 text */
+.term-list-brief-2{
+    margin: auto;
+    float: left;
+    width: 145px;
+    margin-top: 10px;
+    font-weight: 500;
+}
+
+
 .slogan{
     background-color: lightgreen;                                                               
     height: 10vh;
