@@ -315,7 +315,7 @@ a{
     border-radius: 5px;
 }
 /* 회원 가입 비번찾기 부분 */
-.member-service{
+.member-service{                                                                                                                                   
     background: #fff;
     padding: 5px 10px;
     margin: 0;
@@ -432,7 +432,7 @@ a{
     align-items: center;
 }
 .searching-form input{
-    width: 200;x;
+    width: 200px;
     border: 1px solid #aaa;
     padding: 1px 1px 1px 5px;
     height: 22px;
@@ -447,6 +447,78 @@ a{
     height: 22px;
     font-size: 1.1rem;
 }
+/* notice pds */
+.board{
+    background-color: yellow;
+    position: relative;
+    padding-top: 45px;
+    margin-top: 20px;
+}
+.notice-list, .notice-more, .pds-list, .pds-more{
+    display: none;    
+}
+/* notice그룹에만 act를 줌 */
+.tab-act .notice-list, .tab-act .notice-more,
+.tab-act .pds-list, .tab-act .pds-more{
+    display: block;
+}
+.tab{
+    border: 1px solid #aaa;
+    border-radius: 5px 5px 0 0;
+    background: #ccc linear-gradient(180deg, #ccc, #eee);
+    font-size: 1.2rem;
+    font-weight: 400;
+    color: #666;
+    padding: 10px 15px 8;
+    margin: 0;
+    position: absolute;
+    top: 0;
+    /* 클릭가능한 곳에 mouse point */
+    cursor: pointer;
+}
+.tab-act .tab{
+    color: #ce4827;
+    background: #fff;
+    border-color: #ce4827 #ce4827 #fff #ce4827;
+}
+.notice-heading{
+    left: 0;
+}
+.pds-heading{
+    left: 76px
+}
+.board > section > a{
+    position: absolute;
+}
+.notice-list, .pds-list{
+    list-style-type: none;
+    padding-left: 0;
+    margin: 0;
+}
+.notice-list li, .pds-list li{
+    display: flex
+}
+/* 부모가 flex container가 되면 자식은 자동으로 felx item이 된다 */
+/* 남는 영역을 다 확장 -grow 확대 shrink 축소 
+메인 영역 놔두고 메인과 퓨터만 고정된다면 flex-grow:1*/
+/* text overflowr 말줄임표  */
+.notice-list a, .pds-list a{
+    /* flex-grow: 1; */
+    /* text-overflow를 하려면 3개 세트로 whitespace 말줄임표는 한줄밖에 못 씀 */
+    text-overflow: ellipsis;
+    word-spacing: nowrap;
+    overflow: hidden;
+    width: 280px;
+}
+.notice-list time, .pds-list time{
+    width: auto;
+}
+.notice-more, .pds-more{
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
 /* 슬로건 */
 .slogan{
     background-color: lightgreen;                                                               
