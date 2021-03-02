@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Replacemen</title>
+    <style>
+        .brand{
+            position: relative;
+            width: 290px;
+            height: 195px;
+            padding-top: 195px;
+            text-align: 195px;
+        }
+        /* before after 동작하려면 content부터 선언해야 함 */
+        .brand::after{
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            background-image: url(./images/title.png);
+            background-repeat: no-repeat;
+            background-size: cover;
+            /* 배경 사이즈를 이미지 상자크기에 맞추고 싶을 때
+            bgs:cover; */
+            /* 이 경우 height 0 over flow를 발생하게 하면 zengarden글씨는 보이지는 않지만 이미지를 숨기면 글씨가 보임 */
+            overflow: hidden;
+        }
+        </style>
+</head>
+<body>
+    <!-- <h1 class="brand" aria-label="CSS Zen Garden"></h1> -->
+    <h1 class="brand" aria-label="CSS Zen Garden"></h1>
+</body>
+</html>
