@@ -455,7 +455,6 @@ a{
 }
   /* 공지사항 및 자료실 */
 .board{
-    background-color: yellow;
     position: relative;
     padding-top: 45px;
     margin-top: 20px;
@@ -495,7 +494,6 @@ a{
     list-style-type: none;
     padding-left: 0;
     margin: 0;
-    background-color: skyblue;
 }
 .notice-list li, .pds-list li{
     display: flex;
@@ -505,7 +503,6 @@ a{
 메인 영역 놔두고 메인과 퓨터만 고정된다면 flex-grow:1*/
 /* text overflowr 말줄임표  */
 .notice-list a, .pds-list a{
-    background-color: lightgreen;
         /* flex-grow: 1; */
     /* text-overflow를 하려면 3개 세트로 whitespace 말줄임표는 한줄밖에 못 씀 */
     /* flex-grow: 1; */
@@ -513,20 +510,22 @@ a{
     white-space: nowrap;
     overflow: hidden;
     width: 280px;
+    padding-bottom: 15px;
+    font-family: 400;
 }
 .notice-list time, .pds-list time{
-    margin-left: 70px;
+    margin-left: 40px;
     /* width: 150px; */
 }
 .notice-more, .pds-more{
-
-padding: 8px;
+padding: 7px;
 position: absolute;
-    top: -8px;
-    right: -8px;
+top: -7px;
+right: -7px;
+color: hsla(120, 30%, 50%, 1);
 }
-.news-more::before{
-    color: hsla(110, 30%, 50%, 1);
+.icon-plus{
+    color: #000;
 }
 /* 새소식 */
 .news{
@@ -591,7 +590,7 @@ position: absolute;
 /* 신규이벤트 및 관련 사이트 */
 .gradient-box{
     border: 1px solid #aaa;
-    border-radius: 15px 15px 0 0;
+    border-radius: 5;
     background: #ccc linear-gradient(180deg, #ccc, #eee);
     padding: 10px;
 }
@@ -606,6 +605,7 @@ position: absolute;
 .event{
     position: relative;
     border-bottom: 1px solid #aaa;
+    margin-bottom: 10px;
 }
 /* 이미지와 그림자 사이의 갭 처리 */
 .event img{
@@ -624,10 +624,13 @@ position: absolute;
 .btn-event{
     height: 18px;
     overflow: hidden;
+    position: absolute;
+    top: 0;
+    right: 0;
 }
 /* 얘는 보더 박스 높이 margin만 포함 
 trick 부모에게 높이를 주고 넘는 부분 숨기기*/
-.btn-event-prev, .btn-event-button{
+.btn-event-prev, .btn-event-next{
     width: 19px;
     height: 0;
     border: 0;
@@ -635,13 +638,16 @@ trick 부모에게 높이를 주고 넘는 부분 숨기기*/
     /* background-color: transparent;
     background-image: url(./images/back_forward.png);
     background-repeat: no-repeat; */
-    background: url(.imgaes/back_forward.png) no-repeat;
+    background: url(./images/back_forward.png) no-repeat;
     /* 단축했을 때 안 나오는 이유?
     구체성 문제 때문 클래스 단위로 쪼개야 덮어써야 문제가 안 생김 
     주지 않은 position값까지 세팅된 것 그래서 btn-event-next의 position이 취소됨*/
 }
 .btn-event-next{
     background-position: -35px 0;
+}
+.realated{
+
 }
 .event-heading, .related-heading{
     font-size: 1.5rem;
