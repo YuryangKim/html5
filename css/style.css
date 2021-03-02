@@ -2,6 +2,12 @@
 @import url(./fontello.css);
 @import url(./normalize.css);
 /* 숨김 콘텐츠 */
+/* CSS 변수 */
+:root{
+    --primary-color: #ce4827;
+    --secondary-color: #eaac2e;
+    --silver: #aaa;
+}
 .a11y-hidden, legend{
     background-color: red;
     position: absolute;
@@ -51,7 +57,7 @@ a{
 /* 헤더 */
 .header{
     background-color: #fff;
-    position: relative
+    position: relative;
     padding: 0 30px 35px;
     border-radius: 0 0 15px 15px;
 } 
@@ -95,7 +101,7 @@ a{
     border-top: 2px solid #000;
     /* box-shadow: 0 -2px 0 0 #000; */
     /* 폴백으로 배경색까지 벽지가 붙여지지정 않을 때도 보이게 같이 설정 */
-    background:#c45635 linear-gradient(to bottom, #e0a54c 0%,#c45635 23%,#c45635 85%,#e0a54c 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    background:#ce4827 linear-gradient(to bottom, #eaac2e 0%,#ce4827 35%,#ce4827 70%,#eaac2e 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
     /* 모서리 둥근 효과 */
     border-radius: 0 0  5px 5px;
     /* border-radius: 0 0 30 px 30px / 0 0 5px 5px; */
@@ -218,11 +224,11 @@ a{
 .visual::before{
     /* 먼저 선언한 배경이 위로 올라옴 레이어는 반대*/
     background-image: url(./images/ani_flower_01.png), url(./images/ani_flower_02.png);
-    background: url(.images/ani_flower_01.png) no-repeat 0 -10px, 670px 0
+    background-position: -10px, 670px 0; 
 }
 .visual::after{
     background-image: url(./images/ani_flower_03.png), url(./images/ani_flower_04.png);
-    background: url(.images/ani_flower_01.png) no-repeat 300px 0, 800px 0;
+    background-position: 300px 0, 800px 0;
     animation-delay: 1000ms;
 }
 .visual-text{
@@ -257,8 +263,7 @@ a{
 }
 .login{
     /* radial-gradient(circle at right top, #eaac2e, #ce4827 */
-    background: linear-gradient(135deg, #CE6123 60%, #D38730);
-    background-color: orange; 
+    background: radial-gradient(circle at right top, #eaac2e, #ce4827);
     border-radius: 5px;
     box-shadow: 5px 5px 0 0 #aaa;
     padding: 10px;
@@ -267,10 +272,10 @@ a{
     margin: 0;
     font-size: 1.5rem;
     font-weight: 500;
-    color: #dada24;
+    color: yellow
     /* 첫 줄 들여쓰기 박스에만 넣을 수 있다 margin padding은 박스 사이즈에 영향을 주기 때문에 
     indent를 사용한다 또한  음수값을 줄 수 있다*/
-    text-indent: 10px;
+    text-indent: 10px
 }
 .login-form{
     background-color: #fff;
@@ -283,7 +288,6 @@ a{
     padding: 0 0 10px 0;
     border: 0;
     border-bottom: 1px solid #aaa;
-    margin-top: 10px;
     position: relative;
 }
 /* 아이디 비밀번호 사이 띄우기 이 경우 비밀번호 위만 띄움 */
@@ -340,7 +344,7 @@ a{
 }
 .validation-list a{
     display: block;
-    border: 1px solid #ccc;
+    border: 1px solid #aaa;
     border-radius: 20px;
     margin-top: 10px;
     padding: 7px 5px 5px 40px;
@@ -348,8 +352,6 @@ a{
     background-color: #ccc;
 }
 .term{
-    display: inline-block;
-    width: 250px;
     background: linear-gradient(180deg, #ccc, #eee);
     border: 1px solid #ccc;
     border-radius: 5px;
@@ -358,8 +360,8 @@ a{
 }
 /* 웹 관련 용어 */
 .term-heading{
-    margin-top: 10px;
-    font-weight: 700;
+    margin: 0;
+    font-weight: 500;
     font-size: 1.5rem;
 }
 /* 웹 표준이란? */
@@ -414,24 +416,27 @@ a{
     font-weight: 500;
 }
 /* 검색 폼 */
-.searching-form{
+.search-form{
     background: #ccc linear-gradient(180deg, #ccc, #fff);
     border: 1px solid #aaa;
     border-bottom-color: #fff;
+    /* border-top:1px solid #aaa;
+    border-right:1px solid #aaa;
+    border-left:1px solid #aaa; */
     padding: 15px 25px 10px;
     border-radius: 15px 15px 0 0;
 }
-.searching-form fieldset{
+.search-form fieldset{
     margin: 0;
     padding: 0;
     border: 0;
 }
-.searching-form .flexbox{
+.search-form .flexbox{
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
-.searching-form input{
+.search-form input{
     width: 200px;
     border: 1px solid #aaa;
     padding: 1px 1px 1px 5px;
@@ -447,7 +452,7 @@ a{
     height: 22px;
     font-size: 1.1rem;
 }
-/* notice pds */
+  /* 공지사항 및 자료실 */
 .board{
     background-color: yellow;
     position: relative;
@@ -455,9 +460,8 @@ a{
     margin-top: 20px;
 }
 .notice-list, .notice-more, .pds-list, .pds-more{
-    display: none;    
+    display: none;
 }
-/* notice그룹에만 act를 줌 */
 .tab-act .notice-list, .tab-act .notice-more,
 .tab-act .pds-list, .tab-act .pds-more{
     display: block;
@@ -469,11 +473,10 @@ a{
     font-size: 1.2rem;
     font-weight: 400;
     color: #666;
-    padding: 10px 15px 8;
+    padding: 10px 15px 8px;
     margin: 0;
     position: absolute;
     top: 0;
-    /* 클릭가능한 곳에 mouse point */
     cursor: pointer;
 }
 .tab-act .tab{
@@ -485,38 +488,99 @@ a{
     left: 0;
 }
 .pds-heading{
-    left: 76px
-}
-.board > section > a{
-    position: absolute;
+    left: 76px;
 }
 .notice-list, .pds-list{
     list-style-type: none;
     padding-left: 0;
     margin: 0;
+    background-color: skyblue;
 }
 .notice-list li, .pds-list li{
-    display: flex
+    display: flex;
 }
-/* 부모가 flex container가 되면 자식은 자동으로 felx item이 된다 */
+  /* 부모가 flex container가 되면 자식은 자동으로 felx item이 된다 */
 /* 남는 영역을 다 확장 -grow 확대 shrink 축소 
 메인 영역 놔두고 메인과 퓨터만 고정된다면 flex-grow:1*/
 /* text overflowr 말줄임표  */
 .notice-list a, .pds-list a{
-    /* flex-grow: 1; */
+    background-color: lightgreen;
+        /* flex-grow: 1; */
     /* text-overflow를 하려면 3개 세트로 whitespace 말줄임표는 한줄밖에 못 씀 */
+    /* flex-grow: 1; */
     text-overflow: ellipsis;
-    word-spacing: nowrap;
+    white-space: nowrap;
     overflow: hidden;
     width: 280px;
 }
 .notice-list time, .pds-list time{
-    width: auto;
+    /* width: 150px; */
 }
 .notice-more, .pds-more{
     position: absolute;
     top: 0;
     right: 0;
+}
+/* 새소식 */
+.news{
+    background-color: yellow;
+    margin-top: 20px;
+    position: relative;
+}
+.news::before{
+    content: "";
+    position: absolute;
+    top: 35px;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: #aaa linear-gradient(90deg, #aaa 0%, #ccc 50%, #fff 70%, #fff 100%);
+}
+.news-heading{
+    margin: 0;
+    font-size: 1.5rem;
+    /* root 사용 IE는 제공x 변수 사용시 전처리기 sass 사용 개발 sass사용 배포 css*/
+    color: var(--primary-color);
+}
+.news-item{
+    position: relative;
+    padding-left: 145px;
+    margin-top: 35px;
+}
+.news-item-heading{
+    margin: 0 0 5px 0;
+}
+.news-item-brief{
+    margin: 10px 0 0 0;
+    line-height: 1.5;
+}
+.news-item-thumbnail{
+    margin: 0;
+}
+.news-item-thumbnail figcaption{
+    position: absolute;
+    top: 0;
+    left: 0;
+    text-align: center;
+}
+.news-item-thumbnail img{
+    display: block;
+    margin-bottom: 15px;
+    /* x축 0 y축 방향으로 15px blur효과 15px spread 5px */
+    box-shadow: 0 15px 15px 1px var(--silver);
+}
+/* 원래 a요소가 inline이라 width를 못주는데  position을 바꿨기 때문에 block이 됨 relative는 제외 absolute fixed만 적용  */
+.news-more{
+    position: absolute;
+    /* sass로 지역 변수 scope padding값에 따라 top right 음수값 붙을 수 있게 설계 가능 */
+    top: -8px;
+    right: -8px;
+    /* clickerble 영역을 넓게 주기 위해 */
+    padding: 8px;
+}
+/* 색상환 차트 앞에 있는 s 값는 0은 red 0부터 각도 q 채도 l 명도 a 알파 불투명도 */
+.news-more::before{
+    color: hsla(110, 30%, 50%, 1);
 }
 
 /* 슬로건 */
