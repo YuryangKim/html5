@@ -359,62 +359,63 @@ a{
     margin-top: 20px;
 }
 /* 웹 관련 용어 */
+.term{
+    margin-top: 20px;
+    background: #ccc linear-gradient(180deg, #ccc , #eee);
+    border: 1px solid #aaa;
+    border-radius: 5px;
+    padding: 15px;
+}
 .term-heading{
     margin: 0;
-    font-weight: 500;
     font-size: 1.5rem;
+    font-weight: 500;
 }
-/* 웹 표준이란? */
+.term-list{
+    margin: 10px 0 0 0;
+}
+.term-list-thumbnail, .term-list-brief{
+    margin-left: 0;
+}
+.term-list-subject, .term-list-brief{
+    width: 145px;
+}
 .term-list-subject{
-    float: right;
-    width: 145px;
     color: #296897;
-    font-size: 100%;
-    font-weight: 500;
+    margin-top: -1px;
 }
-/* 로고 */
-.term-list-thumbnail{
-    display: inline;
-    position: relative;
-    margin: auto;
-    float: left;
-    background: url(./images/common/web_standards.gif) no-repeat 15px 50%;
-}
-/* text */
 .term-list-brief{
-    margin: auto;
-    float: right;
-    width: 145px;
+    margin-top: 5px;
+    line-height: 1.5;
+    /* text-align: justify; */
+}
+.term-list > div::after{
+    content: '';
+    display: block;
+    clear: both;
+} 
+.term-list > div{
+    /* overflow: hidden; */
     margin-top: 10px;
-    margin-bottom: 10px;
-    font-weight: 500;
+}
+.term-list img{
+    vertical-align: top;
+}
+.term-list div:nth-child(odd) .term-list-subject, 
+.term-list div:nth-child(odd) .term-list-brief{
+    float: right;
+}
+.term-list div:nth-child(odd) .term-list-thumbnail{
+    float: left;
+}
+.term-list div:nth-child(even) .term-list-subject, 
+.term-list div:nth-child(even) .term-list-brief{
+    float: left;
+}
+.term-list div:nth-child(even) .term-list-thumbnail{
+    float: right;
 }
 
-/* 2번째 웹 표준이란? */
-.term-list-subject-2{
-    float: left;
-    width: 145px;
-    color: #296897;
-    font-size: 100%;
-    font-weight: 500;
-    margin-top: 10px;
-}
-/* 2번째 로고 */
-.term-list-thumbnail-2{
-    display: inline;
-    position: relative;
-    margin: auto;
-    float: right;
-    background: url(./images/common/web_standards.gif) no-repeat 15px 50%;
-}
-/* 2번째 text */
-.term-list-brief-2{
-    margin: auto;
-    float: left;
-    width: 145px;
-    margin-top: 10px;
-    font-weight: 500;
-}
 /* 검색 폼 */
 .search-form{
     background: #ccc linear-gradient(180deg, #ccc, #fff);
@@ -514,16 +515,21 @@ a{
     width: 280px;
 }
 .notice-list time, .pds-list time{
+    margin-left: 70px;
     /* width: 150px; */
 }
 .notice-more, .pds-more{
-    position: absolute;
-    top: 0;
-    right: 0;
+
+padding: 8px;
+position: absolute;
+    top: -8px;
+    right: -8px;
+}
+.news-more::before{
+    color: hsla(110, 30%, 50%, 1);
 }
 /* 새소식 */
 .news{
-    background-color: yellow;
     margin-top: 20px;
     position: relative;
 }
@@ -556,12 +562,11 @@ a{
 }
 .news-item-thumbnail{
     margin: 0;
-}
-.news-item-thumbnail figcaption{
     position: absolute;
     top: 0;
     left: 0;
     text-align: center;
+    
 }
 .news-item-thumbnail img{
     display: block;
@@ -583,6 +588,65 @@ a{
     color: hsla(110, 30%, 50%, 1);
 }
 
+/* 신규이벤트 및 관련 사이트 */
+.gradient-box{
+    border: 1px solid #aaa;
+    border-radius: 15px 15px 0 0;
+    background: #ccc linear-gradient(180deg, #ccc, #eee);
+    padding: 10px;
+}
+.point-color{
+    color: #ce4827;
+}
+.drop-shadow{
+    display: inline-block;
+    border: 1px solid #aaa;
+    box-shadow: 5px 5px 0 0 #999;
+}
+.event{
+    position: relative;
+    border-bottom: 1px solid #aaa;
+}
+/* 이미지와 그림자 사이의 갭 처리 */
+.event img{
+    vertical-align: top;
+}
+.event-brief{
+    text-align: center;
+    margin: 10px 0;
+    line-height: 1.5;
+}
+/* em inline 상자 따라서block 처리 */
+.event-brief em{
+    display: block;
+    font-style: normal;
+}
+.btn-event{
+    height: 18px;
+    overflow: hidden;
+}
+/* 얘는 보더 박스 높이 margin만 포함 
+trick 부모에게 높이를 주고 넘는 부분 숨기기*/
+.btn-event-prev, .btn-event-button{
+    width: 19px;
+    height: 0;
+    border: 0;
+    padding: 18px 0 0 0;
+    /* background-color: transparent;
+    background-image: url(./images/back_forward.png);
+    background-repeat: no-repeat; */
+    background: url(.imgaes/back_forward.png) no-repeat;
+    /* 단축했을 때 안 나오는 이유?
+    구체성 문제 때문 클래스 단위로 쪼개야 덮어써야 문제가 안 생김 
+    주지 않은 position값까지 세팅된 것 그래서 btn-event-next의 position이 취소됨*/
+}
+.btn-event-next{
+    background-position: -35px 0;
+}
+.event-heading, .related-heading{
+    font-size: 1.5rem;
+    margin: 0 0 10px 0;
+}
 /* 슬로건 */
 .slogan{
     background-color: lightgreen;                                                               
