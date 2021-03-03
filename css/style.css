@@ -590,7 +590,7 @@ color: hsla(120, 30%, 50%, 1);
 /* 신규이벤트 및 관련 사이트 */
 .gradient-box{
     border: 1px solid #aaa;
-    border-radius: 5;
+    border-radius: 5PX;
     background: #ccc linear-gradient(180deg, #ccc, #eee);
     padding: 10px;
 }
@@ -646,12 +646,44 @@ trick 부모에게 높이를 주고 넘는 부분 숨기기*/
 .btn-event-next{
     background-position: -35px 0;
 }
-.realated{
-
+.related{
+    padding-top: 10px;
 }
 .event-heading, .related-heading{
     font-size: 1.5rem;
     margin: 0 0 10px 0;
+}
+.related-list{
+    background-color: white;
+    overflow: hidden;
+    height: 27px;
+    border: 1px solid #aaa;
+    border-radius: 5px;
+    /*agent style 초기화  */
+    margin: 0px;
+    padding-left: 0px;
+    list-style-type: none;
+    /* animaition*/
+    transition-property: all;
+    transition-duration: 0.4s
+}
+.related-list:hover, .related-list:focus{
+    height: 147px;
+    padding: 10px 0;
+}
+.related-list a{
+    display: block;
+    line-height: 25px;
+    /* 2글자 들여쓰기 한 것과 같은 효과 */
+    text-indent: 2em;
+}
+/* tab키 했을 때 outline이 보이게 하고 싶을 때 */
+.related-list a:focus{
+    outline: 1px solid darkblue;
+    /* x축 y축 */
+    /* custom ua둥근 모서리를 주고 싶으면 boxshadow를 이용해서 효과를 만듦 */
+    outline-offset: -2px;
+
 }
 /* 슬로건 */
 .slogan{
