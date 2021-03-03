@@ -649,7 +649,7 @@ trick 부모에게 높이를 주고 넘는 부분 숨기기*/
 .related{
     padding-top: 10px;
 }
-.event-heading, .related-heading{
+.section-heading{
     font-size: 1.5rem;
     margin: 0 0 10px 0;
 }
@@ -683,8 +683,69 @@ trick 부모에게 높이를 주고 넘는 부분 숨기기*/
     /* x축 y축 */
     /* custom ua둥근 모서리를 주고 싶으면 boxshadow를 이용해서 효과를 만듦 */
     outline-offset: -2px;
-
 }
+/* 인기 사이트 */
+.favorite{
+    position: relative;
+    background-color: pink;
+    margin-top: 20px;
+    font-weight: 300;
+}
+.favorite-more{
+    position: absolute;
+    top: 1px;
+    right: 2px;
+    padding: 8px;
+    padding-top: 10px;
+}
+.favorite-more::before{
+    color: hsla(120, 30%, 50%, 1);
+}
+.favorite-list{
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+.favorite-list li{
+    counter-increment: number;
+    margin-top: 5px;
+    display: flex;
+    align-items: center;
+}
+.favorite-list .up,
+.favorite-list .stop,
+.favorite-list .down{
+    font-style: normal;
+    width: 9px;
+    height: 11px;
+    /* 들여 쓰기 */
+    text-indent: 9px;
+    overflow: hidden;
+    white-space: nowrap;
+    background-image: url(./images/rank.png);
+    background-repeat: no-repeat;
+}
+.favorite-list .stop{
+    background-position: 0 50%;
+}
+.favorite-list .down{
+    background-position: 0 100%;
+}
+
+.favorite-list li::before{
+    content: counter(number);
+    color: white;
+    background-color: #aaa;
+    border-radius: 3px;
+    display: inline-block;
+    padding: 2px 5px;
+    margin-right: 5px;
+}
+.favorite-list a{
+    flex-grow: 1;
+}
+
+
 /* 슬로건 */
 .slogan{
     background-color: lightgreen;                                                               
